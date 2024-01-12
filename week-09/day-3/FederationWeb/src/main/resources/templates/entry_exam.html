@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .exam {
+            display: grid;
+            place-items: center;
+            margin: 110px 0;
+        }
+
+        .question {
+            text-align: center;
+            display: grid;
+            place-items: center;
+            width: 50%; /* Set a fixed width for the question container */
+            margin: 0 auto; /* Center the question container */
+        }
+
+        .question p {
+            margin-bottom: 10px;
+        }
+
+        .bottom_banner {
+            text-align: center;
+            border: 4px solid black;
+            border-right: none;
+            border-left: none;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-weight: bolder;
+            padding: 10px 0;
+            background-color: #ceced2;
+        }
+
+        .top_banner {
+            text-align: center;
+            border: 4px solid black;
+            border-right: none;
+            border-left: none;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            font-weight: bolder;
+            padding: 10px 0;
+            background-color: #ceced2;
+
+        }
+
+        .logo {
+
+            float: left;
+            margin-left: 100px;
+            width: 65px;
+        }
+
+        .logo2 {
+            float: right;
+            margin-right: 100px;
+            width: 65px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="top_banner">
+    <h1>ENLISTMENT ENTRY EXAM</h1>
+</div>
+
+
+<form class="exam" action="/galactic_gov/entry_exam" method="post">
+    <div class="question">
+        <p>What is the primary function of a Mobile Infantry soldier's standard issue Morita Assault Rifle?</p>
+        <label>
+            <input type="radio" name="q1" value="a"> A. To make coffee
+        </label>
+        <label>
+            <input type="radio" name="q1" value="b"> B. To provide light during night operations
+        </label>
+        <label>
+            <input type="radio" name="q1" value="c"> C. To engage and neutralize hostile Arachnids
+        </label>
+        <label>
+            <input type="radio" name="q1" value="d"> D. To entertain fellow soldiers with music
+        </label>
+    </div>
+    <div class="question">
+        <p>As a pilot in the United Citizen Federation Fleet, what is the
+            recommended maneuver when encountering a Bug Plasma Spout during atmospheric entry?</p>
+        <label>
+            <input type="radio" name="q2" value="a"> A. Perform a barrel roll
+        </label>
+        <label>
+            <input type="radio" name="q2" value="b"> B. Execute a high-G inverted loop
+        </label>
+        <label>
+            <input type="radio" name="q2" value="c"> C. Activate ECM and initiate evasive maneuvers
+        </label>
+        <label>
+            <input type="radio" name="q2" value="d"> D. Deploy landing gear for an emergency crash landing
+        </label>
+    </div>
+    <div class="question">
+        <p>In the hypothetical scenario of a Klendathu Hive Queen attempting to establish
+            a telepathic link with the Terran Council, what psi-level frequency modulation would be
+            required to disrupt the communication and prevent strategic information leakage?</p>
+        <label>
+            <input type="radio" name="q3" value="a"> A. Delta-9.42
+        </label>
+        <label>
+            <input type="radio" name="q3" value="b"> B. Theta-7.88
+        </label>
+        <label>
+            <input type="radio" name="q3" value="c"> C. Gamma-5.11
+        </label>
+        <label>
+            <input type="radio" name="q3" value="d"> D. Omega-12.75
+        </label>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+<div class="bottom_banner">
+    <img class="logo" src="/logo_water.png" alt="logo"/>
+    <img class="logo2" src="/logo_water.png" alt="logo"/>
+    <h1>WOULD YOU LIKE TO KNOW MORE?</h1>
+
+</div>
+
+</body>
+</html>

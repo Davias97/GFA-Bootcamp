@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Account login</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #custom-body {
+            background-color: white;
+            padding: 5%;
+            margin-bottom: 10px;
+        }
+
+        h1, h2, h3 {
+            color: grey;
+        }
+        h1 {
+            font-size: 45px;
+        }
+
+        h2 {
+            font-size: 10px;
+        }
+
+        .forgotten-password {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .button-login {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            width: 20%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 30px;
+        }
+
+        .button-login:hover {
+            background-color: grey;
+        }
+
+        label:active {
+            color: green;
+        }
+
+        /* BUBLINA */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* BUBLINA */
+        .tooltip:hover::before {
+            content: "TAK JSI DEBIL LOL";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .tooltip:hover::before {
+            opacity: 0.75;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id=custom-body>
+    <h1>Account login</h1>
+
+    <h2>USERNAME</h2>
+
+    <label for="USERNAME"></label>
+    <input type="text" id="USERNAME" name="input_element_name">
+
+    <h2>PASSWORD</h2>
+
+    <label for="PASSWORD"></label>
+    <input type="text" id="PASSWORD" name="input_element_name">
+
+    <h3><div class="forgotten-password"><span class="tooltip">Forgot Password?</span></div></h3>
+
+    <h4><div class="button-login">Login</div></h4>
+
+</div>
+</body>
+
+</html>

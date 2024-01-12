@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Information Page</title>
+</head>
+<body>
+<h1>Fox Information</h1>
+<div th:if="${fox != null}">
+    <p th:text="${'Name: ' + fox.name}"></p>
+    <p th:if="${fox.tricks.size() == 0}">This fox doesn't know any tricks yet!</p>
+    <ul>
+        <li th:each="trick : ${fox.tricks}" th:text="${trick}"></li>
+    </ul>
+    <p th:text="${'Food: ' + fox.food}"></p>
+    <p th:text="${'Drink: ' + fox.drink}"></p>
+</div>
+<!-- Other content -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+
+    <style>
+
+        {
+            box-sizing: border-box;}
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: #cccccc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 7px;
+            padding: 10%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: 24px;
+            padding: 10px 40px 10px 10px;
+            font-size: 12px;
+            color: #777777;
+        }
+
+        .login {
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 18px;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        h2 {
+            color: black;
+            font-family: Arial, serif;
+            margin-bottom: 80px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        .password a {
+            font-size: 10px;
+            text-decoration: none;
+            color: #777777;
+        }
+
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <form method="post" th:action="@{/addCharacter}" th:object="${character}">
+
+        <label>WELCOME ADVENTURER
+            <input id="name" type="text" th:field="*{name}" placeholder="Enter character name">
+            <input id="race" type="text" th:field="*{race}" placeholder="Enter character race">
+        </label>
+
+        <button type="submit">Add new character</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+</style>
+
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+
+<form method="GET" action="/todo/search">
+    <div>
+        <input id="search" type="text" name="search" placeholder="Search..">
+        <label for="search" hidden="hidden">Search</label>
+        <input type="hidden" name="urgentSearch" value="0">
+        <input type="checkbox" name="urgentSearch" id="urgentx"/>
+        <label for="urgentx">urgent</label>
+        <input type="checkbox" name="doneSearch" id="donex"/>
+        <input type="hidden" name="doneSearch" value="0">
+        <label for="donex">done</label>
+        <input type="submit">
+    </div>
+</form>
+
+<h1>Todos for today</h1>
+
+<a th:href="@{/todo/add}">Add New Todo</a>
+<a th:href="@{/todo/listAssignees}">List of Assignees</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Urgent</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.done}"></td>
+        <td th:text="${todo.urgent}"></td>
+        <td><form th:action="@{/todo/{id}/delete(id=${todo.id})}" method="post"><button type="submit" >delete</button></form></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

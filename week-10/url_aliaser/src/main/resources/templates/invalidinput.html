@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 0;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .links {
+        text-align: center;
+        margin: 10px;
+    }
+
+    .links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        background-color: #ccc;
+        border: 2px solid #000;
+        border-radius: 5px;
+    }
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oops, something went wrong!</title>
+</head>
+<body>
+<div class="container">
+    <h1>Invalid input: <span th:text="${error.getError()}"></span></h1>
+    <hr />
+    <div class="links">
+        <a href="/">Home</a>
+    </div>
+</div>
+</body>
+</html>

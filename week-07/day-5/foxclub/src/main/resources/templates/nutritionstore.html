@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+
+</style>
+
+<head>
+    <title>Fox Club</title>
+</head>
+<body>
+<h1>Nutrition Store</h1>
+<div><a th:href="'/index?name='+${name}">Info page</a></div>
+<div><a th:href="'/nutritionstore?name='+${name}">Nutrition page</a></div>
+<div><a th:href="'/trickcenter?name='+${name}">Trick center</a></div>
+<div><a th:href="'/actionhistory?name='+${name}">Action history</a></div>
+<div><h2>Jidlo</h2>
+    <form method="POST" >
+        <input list="food" name="food" required>
+        <datalist id="food">
+            <option value="kobliha">
+            <option value="sardinky">
+            <option value="piko">
+            <option value="heroin">
+            <option value="toulen">
+        </datalist>
+        <h2>Pití</h2>
+        <input list="drink"  name="drink" required>
+        <datalist id="drink">
+            <option value="cola">
+            <option value="rum">
+            <option value="jar">
+            <option value="vodka">
+            <option value="mama">
+        </datalist>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

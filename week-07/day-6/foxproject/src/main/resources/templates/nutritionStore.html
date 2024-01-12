@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Store</title>
+</head>
+<body>
+<h1>Nutrition Store</h1>
+<form action="/updateNutrition" method="post">
+    <input type="hidden" name="name" th:value="${fox.name}">
+    <label for="food">Food:</label>
+    <select name="food" id="food">
+        <option th:each="option : ${foodOptions}" th:text="${option}"></option>
+    </select>
+    <label for="drink">Drink:</label>
+    <select name="drink" id="drink">
+        <option th:each="option : ${drinkOptions}" th:text="${option}"></option>
+    </select>
+    <button type="submit">Update Nutrition</button>
+</form>
+<!-- Other content -->
+</body>
+</html>

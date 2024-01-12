@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Account Information</title>
+</head>
+<body>
+<h1>Bank Account Information</h1>
+<div>
+    <p>Name: <span th:text="${account.name}"></span></p>
+    <p>Balance: <span th:text="${account.getDecimalSetter()}"></span> Zebra</p>
+</div>
+</body>
+</html>

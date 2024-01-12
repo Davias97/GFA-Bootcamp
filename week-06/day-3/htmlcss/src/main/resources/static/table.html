@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Table</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-radius: 10px;
+            width: 25%;
+            height: 50%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-family: Arial, serif;
+        }
+
+        th {
+            border: 3px solid grey;
+            background-color: black;
+            color: white;
+        }
+
+        td {
+            border: 1px solid grey;
+        }
+
+        th:first-child {
+            border-top: none;
+            border-left: none;
+            border-right-width: 1px;
+        }
+
+        th:last-child {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        td:first-child {
+            border-left: none;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tr:first-child td {
+            border-top: none;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>This is a table</h1>
+<table>
+
+    <th>
+        Month
+    </th>
+    <th>
+        Sales
+    </th>
+    <tr>
+        <td>January</td>
+        <td>$ 50,000.00</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$ 10,000.00</td>
+    </tr>
+    <tr>
+        <td>March</td>
+        <td>$ 85,000.00</td>
+    </tr>
+    <tr>
+        <td>April</td>
+        <td>$ 56,000.00</td>
+    </tr>
+    <tr>
+        <td>May</td>
+        <td>$ 98,000.00</td>
+    </tr>
+</table>
+</body>
+
+</html>

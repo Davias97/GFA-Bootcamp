@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+
+</style>
+
+<head>
+    <title>Fox Club</title>
+</head>
+<body>
+<div><a th:href="'/index?name='+${name}">Info page</a></div>
+<div><a th:href="'/nutritionstore?name='+${name}">Nutrition page</a></div>
+<div><a th:href="'/trickcenter?name='+${name}">Trick center</a></div>
+<div><a th:href="'/actionhistory?name='+${name}">Action history</a></div>
+<p>
+    <img src="greenfox.png">
+</p>
+<h2 th:text="'This is Mr. ' + ${name} +  '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows ' + ${numberOfTricks} + 'tricks.'"></h2>
+
+<h1>Known tricks</h1>
+
+<table>
+    <tr th:each="item : ${trickList}">
+        <td th:text="${item}"/>
+    </tr>
+</table>
+</body>
+</html>

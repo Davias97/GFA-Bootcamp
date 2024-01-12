@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+
+</style>
+
+<head>
+    <title>Fox Club</title>
+</head>
+<body>
+<h1>Nutrition Store</h1>
+<div><a th:href="'/index?name='+${name}">Info page</a></div>
+<div><a th:href="'/nutritionstore?name='+${name}">Nutrition page</a></div>
+<div><a th:href="'/trickcenter?name='+${name}">Trick center</a></div>
+<div><a th:href="'/actionhistory?name='+${name}">Action history</a></div>
+
+<h2>Choose Trick</h2>
+<form method="POST" >
+    <input list="trick" name="trick" required>
+    <datalist id="trick">
+        <option value="snup">
+        <option value="salto">
+        <option value="tahat bongy">
+        <option value="štěkat">
+        <option value="motat jednou rukou">
+    </datalist>
+    <input type="submit">
+</form>
+</body>
+</html>

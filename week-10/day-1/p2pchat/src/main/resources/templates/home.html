@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 0;
+        padding: 8px;
+        text-align: left;
+    }
+
+    #message {
+        height: 40px; /* Set the height to twice the original value */
+    }
+    .message_body{
+        list-style: none;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>P2P Chat</title>
+</head>
+<body>
+<div class="container">
+    <h1> Peer to peer Chat program!</h1>
+    <hr />
+    <form action ="#"
+          th:action="@{/}"
+          th:object="${client}"
+          method="POST">
+        <div>
+            <label for="name">Your username: </label>
+            <input id="name" type="text" name="name" placeholder="Enter your name..."/>
+            <button type ="submit">Update</button>
+        </div>
+    </form>
+    <form action ="#"
+          th:action="@{/}"
+          th:object="${clients}"
+          method="GET">
+        <ul th:each="client : ${clients}">
+            <li th:text="${client.username}"></li>
+            <li class="message_body" th:each="message : ${client.messageList}" th:text="${message.body}"></li>
+        </ul>
+    </form>
+    <form action ="#"
+          th:action="@{/}"
+          th:object="${message}"
+          method="POST">
+        <div>
+            <input id="message" type="text" name="message" placeholder="Enter your message..."/>
+            <button type ="submit">Send!</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

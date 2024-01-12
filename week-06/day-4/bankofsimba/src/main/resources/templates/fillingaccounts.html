@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+
+        background-image: url('wp1849331.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-radius: 50%;
+        width: 25%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: 45px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        font-family: "Comic Sans MS",serif;
+    }
+
+    th {
+        border: 3px solid black;
+        background-color: black;
+        text-shadow: 0 0 10px rebeccapurple; color: mediumpurple;;
+    }
+
+    td {
+        border: 3px solid black;
+    }
+
+    th:first-child {
+        border-top: none;
+        border-left: none;
+        border-right-width: 1px;
+    }
+
+    th:last-child {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    td:first-child {
+        border-left: none;
+    }
+
+    td:last-child {
+        border-right: none;
+    }
+
+    tr:first-child td {
+        border-top: none;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    th {
+        border-top: none;
+    }
+
+    tr:nth-child(odd) {
+        background-color: grey;
+    }
+
+    tr:nth-child(even) {
+        background-color: darkgrey;
+    }
+
+    .king-text {
+        text-shadow: 0 0 10px gold; color: gold;
+    }
+
+    .bad-guy {
+        text-shadow: 0 0 10px black; color: red;
+    }
+</style>
+<head>
+    <title>Bank Account Table</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>Index</th>
+        <th>The King</th>
+        <th>GoodBadGuy</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="account, iterStat : ${bankAccountTable}">
+        <td th:text="${account.name}"></td>
+        <td th:text="${account.getDecimalSetter()}"></td>
+        <td th:text="${account.animalType}"></td>
+        <td th:text="${iterStat.index + 1}"></td>
+        <td th:classappend="${account.animalType == 'lion'} ? 'king-text'">
+            <span th:text="${account.animalType == 'lion'} ? 'Da King' : ''"></span></td>
+        <td th:classappend="${account.animalType == 'monkey'} ? 'bad-guy'">
+        <span th:text="${account.animalType == 'lion' || account.animalType == 'meerkat' || account.animalType == 'warthog'} ? 'Good guy' : 'Bad Guy'"></span></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+</style>
+
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+
+<div class="search-container">
+    <form action="/todo/listAssignees" method="get">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="Search">Search</button>
+    </form>
+</div>
+
+<h1>List of Assignees</h1>
+
+<a th:href="@{/todo/add}">Add New Todo</a>
+<a th:href="@{/todo/listAssignees}">List of Assignees</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="assignee : ${assignees}">
+        <td th:text="${assignee.id}"></td>
+        <td th:text="${assignee.name}"></td>
+        <td th:text="${assignee.email}"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

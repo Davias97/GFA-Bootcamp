@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Aliaser App</title>
+</head>
+<style>
+
+    body {
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        display: flex;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 3px solid black;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .links {
+        margin: 10px;
+    }
+
+    .links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        /*    text-decoration: none;*/
+        /*    color: #333;*/
+        /*    background-color: #ccc;*/
+        /*    border: 2px solid #000;*/
+        /*    border-radius: 5px;*/
+    }
+</style>
+
+<body>
+
+<h1> URL Aliaser </h1>
+<table>
+    <thead>
+    <tr>
+        <th>URL</th>
+        <th>Alias</th>
+        <th>Hit count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:method="GET" th:each="alias : ${aliasList}">
+        <td><a th:text="${alias.getLink().url}" th:href="${alias.getLink().url}"></a></td>
+        <td th:text="${alias.alias}"></td>
+        <td th:text="${alias.hitCount}"></td>
+    </tr>
+    </tbody>
+</table>
+<form method="POST" th:action="@{/save-link}">
+    <p th:text="${error}"></p>
+    <p th:text="${succes}"></p>
+    <label> URL <br/>
+        <input type="text" name="url" th:value="${url}">
+    </label>
+    <br/>
+    <label> Alias <br/>
+        <input type="text" name="alias" th:value="${alias}">
+    </label>
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

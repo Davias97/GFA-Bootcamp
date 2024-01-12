@@ -1,0 +1,2 @@
+remove all file types in parent dir and subdirs:
+-rm parentdir/**/*.jpg

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        let isTextModified = false;
+
+        // Funkce, která se zavolá, když uživatel začne psát
+        function onTextChange() {
+            isTextModified = true;
+        }
+
+        setTimeout(function() {
+            if (!isTextModified) {
+                location.reload();
+            }
+        }, 3000);
+    </script>
+</head>
+<body>
+<h1>Peer to peer Chat program</h1>
+<h3 th:if="${client!=null}" th:text="${client.id}+' is logged'"></h3>
+<h3 th:unless="${client!=null}" th:text="'nobody is logged'"></h3>
+<form method="post">
+    <label>Your user name
+        <input type="text" name="username" placeholder="enter your name" required oninput="onTextChange()">
+        <button>update</button>
+    </label>
+</form>
+<h2 th:text="${error}"></h2>
+<ul th:if="${client!=null}">
+    <li th:each="message : ${messages}" th:utext="${#strings.replace(message.client.id + '\n' + message.text, '\n', '<br>')}">
+    </li>
+</ul>
+<form th:method="put">
+    <label>
+        <textarea name="text" oninput="onTextChange()"> </textarea>
+    </label>
+    <button>Send</button>
+</form>
+</body>
+</html>

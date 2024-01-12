@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 0;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myReddit</title>
+</head>
+<body>
+<div class="container">
+    <a th:href="@{'/'}">Home</a>
+        <div class="post">
+            <h2 th:text="${post.title}">Title</h2>
+            <h5 th:text="'Written by: ' + ${post.user.getName()}"></h5>
+            <h5 th:text="'Published on ' + ${post.createdAt}">Created At</h5>
+            <br />
+        </div>
+    </div>
+</div>
+</body>
+</html>

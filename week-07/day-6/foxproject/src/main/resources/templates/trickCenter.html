@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trick Center</title>
+</head>
+<body>
+<h1>Trick Center</h1>
+<form action="/learnTrick" method="post">
+    <input type="hidden" name="name" th:value="${fox.name}">
+    <label for="trick">Choose a Trick:</label>
+    <select name="trick">
+        <option th:each="trick : ${availableTricks}" th:text="${trick}"></option>
+    </select>
+    <button type="submit">Learn Trick</button>
+</form>
+<!-- Other content -->
+</body>
+</html>

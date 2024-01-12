@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist Information</title>
+</head>
+<style>
+
+    body {
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        display: flex;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+
+    }
+
+    th {
+        text-align: center;
+    }
+    td {
+        text-align: left;
+    }
+
+    th, td {
+        padding: 8px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px;
+    }
+
+    .input {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .submit_button {
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-size: medium;
+    }
+
+</style>
+
+<body>
+
+<h1> Tourist Information </h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Category</th>
+        <th>Duration</th>
+        <th>Recommended age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="attraction : ${attractionList}">
+        <td th:text="${attraction.name}"></td>
+        <td th:text="${attraction.city}"></td>
+        <td th:text="${attraction.price}"></td>
+        <td th:text="${attraction.longitude}"></td>
+        <td th:text="${attraction.latitude}"></td>
+        <td th:text="${attraction.category.name}"></td>
+        <td th:text="${attraction.duration}"></td>
+        <td th:text="${attraction.recommended_age}"></td>
+    </tr>
+    </tbody>
+</table>
+<h2>Attraction form</h2>
+<form method="POST" th:action="@{/add}">
+    <p th:if="${error}" th:text="${error}"></p>
+    <label class="input">Name
+        <input type="text" name="name">
+    </label>
+    <label class="input">City
+        <input type="text" name="city">
+    </label>
+    <label class="input">Price
+        <input type="text" name="price">
+    </label>
+    <label class="input"> Longitude
+        <input type="text" name="longitude">
+    </label>
+    <label class="input"> Latitude
+        <input type="text" name="latitude">
+    </label>
+    <label class="input"> Category
+        <select>
+            <option name="category" th:each="category : ${categoryList}" th:text="${category}" placeholder="Choose..."></option>
+        </select>
+    </label>
+    <label class="input"> Duration
+        <input type="text" name="duration">
+    </label>
+    <label class="input">Recommended age
+        <input type="text" name="recommendedAge">
+    </label>
+    <button class="submit_button" type="submit">Submit</button>
+</form>
+</body>
+</html>

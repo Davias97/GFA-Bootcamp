@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 0;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="container">
+    <h1> Enter!</h1>
+    <a th:href="@{'/'}">Home</a>
+    <hr />
+    <form action ="#"
+          th:action="@{/register}"
+          th:object="${client}"
+          method="POST">
+        <div>
+            <label for="name">Choose your name: </label>
+            <input id="name" type="text" th:field="*{username}" placeholder="Enter your name..."/>
+            <button type ="submit">Enter</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
