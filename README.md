@@ -1,2 +1,1 @@
-[git-lesson-repository.git](https://github.com/Davias97/git-lesson-repository.git)
-[hello-world](https://github.com/Davias97/hello-world.git)
+All my projects made during gfa bootcamp - basically just a bunch of badly written code and overflowing for loops :)
